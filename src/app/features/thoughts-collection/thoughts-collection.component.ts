@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThoughtsService } from '../../core/thoughts.service';
 
 @Component({
   selector: 'app-thoughts-collection',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThoughtsCollectionComponent implements OnInit {
 
-  constructor() { }
+  thoughts$ = this.thoughtsSrv.getThoughtsList();
+
+  constructor(
+    private thoughtsSrv: ThoughtsService
+  ) { }
 
   ngOnInit(): void {
   }

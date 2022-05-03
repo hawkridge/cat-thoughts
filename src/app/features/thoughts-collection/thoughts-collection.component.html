@@ -1,1 +1,7 @@
-<p>thoughts-collection works!</p>
+<section class="thoughts-collection">
+  <ng-container *ngIf="thoughts$ | async as thoughts">
+    <ng-container *ngFor="let thought of thoughts">
+      <div>{{ thought.author }}</div>
+    </ng-container>
+  </ng-container>
+</section>
